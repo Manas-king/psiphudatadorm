@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+<body bgcolor="#2B1B17">
+ <div class="login">
+		<p><font color="red" font-size:55px;><center>WEATHER PREDICTION</center></font></p>
+
+     		<!-- Main Input For Receiving Query to our ML -->
+    	<form action="{{ url_for('predict')}}"method="post" align=center>
+
+    		<input type="text" name="1" placeholder="High Temp (F)" required="required" / style="background-color:#98AFC7;">
+        	<input type="text" name="2" placeholder="Avg Temp (F)" required="required" / style="background-color:#98AFC7;"><br><br>
+			<input type="text" name="3" placeholder="Low Temp (F) " required="required" / style="background-color:#98AFC7;">
+        	<input type="text" name="4" placeholder="High Dew Point (F) " required="required" / style="background-color:#98AFC7;"><br><br>
+        	<input type="text" name="5" placeholder="Avg Dew Point (F)" required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="6" placeholder="Low Dew Point (F) " required="required" /style="background-color:#98AFC7;"><br><br>
+        	<input type="text" name="7" placeholder="High Humidity (%)" required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="8" placeholder="Avg Humidity (%)" required="required" /style="background-color:#98AFC7;"><br><br>
+        	<input type="text" name="9" placeholder="Low Humidity (%)" required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="10" placeholder="High Sea Level Press (in) " required="required" /style="background-color:#98AFC7;"><br><br>  
+        	<input type="text" name="11" placeholder="Avg Sea Level Press (in) " required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="12" placeholder="Low Sea Level Press (in)" required="required" /style="background-color:#98AFC7;"><br><br>
+        	<input type="text" name="13" placeholder="High Visibility (mi)" required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="14" placeholder="Avg Visibility (mi)" required="required" /style="background-color:#98AFC7;"><br><br>
+        	<input type="text" name="15" placeholder="Low Visibility (mi)" required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="16" placeholder="High Wind (mph)" required="required" /style="background-color:#98AFC7;"><br><br>
+        	<input type="text" name="17" placeholder="Avg Wind (mph)" required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="18" placeholder="High Wind Gust (mph) " required="required" /style="background-color:#98AFC7;"><br><br>
+        	<input type="text" name="19" placeholder="Snowfall (in)" required="required" /style="background-color:#98AFC7;">
+        	<input type="text" name="20" placeholder="Precip (in)" required="required" /style="background-color:#98AFC7;"><br><br><br>
+    
+        	<button type="submit" class="btn btn-primary btn-block btn-large" style="background-color:#78866B;">Predict</button>
+    	</form>
+
+   		<br>
+   		<br>
+   		<div style="background-color:lightblue">
+   			{{ prediction_text }}
+   		</div>
+	</div>
+</body>
+</html>
